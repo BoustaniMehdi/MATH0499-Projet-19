@@ -18,8 +18,8 @@ class Agent:
             self.days_infected = 0
             
     def heal(self):
-        if self.status == "infected" and self.days_infected >= 30:   
-            self.status = "healthy"
+        if self.status == "infected" and self.days_infected >= 5:   
+            self.status = "cured"
             self.days_infected = 0
     
     def update(self):
