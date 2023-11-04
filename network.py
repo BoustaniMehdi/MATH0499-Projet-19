@@ -42,11 +42,13 @@ class Graph:
                 # Communautés voisines
                 source_node = random.choice(current_community)
                 target_node = random.choice(next_community)
-                self.G.add_edge(source_node, target_node)
+                if(source_node != target_node):
+                    self.G.add_edge(source_node, target_node)
                 # Autre communauté 
                 source_node = random.choice(current_community)
                 target_node = random.choice(other_community)
-                self.G.add_edge(source_node, target_node)
+                if(source_node != target_node):
+                    self.G.add_edge(source_node, target_node)
 
     def init_graph(self, graph_state):
         

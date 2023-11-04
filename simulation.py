@@ -14,15 +14,16 @@ from network import Graph
 import matplotlib.animation as animation
 
 # Variables
-##num_agents = 400 # Nombre de sommets (#V)
-num_infected_agent = random.randint(1, 3) # Nombre aléatoire d'agent infecté au départ
-##num_communities = 5 # Nombre de communautés ( >= 1)
 min_degree = 4 # Degré minimum des noeuds ( > 1)
 frames = 20 # Nombre de frames pour l'animation (idéal : [10, 20])
 
 # Fonction principale de la simulation
 def run_simulation(num_communities,num_agents):
+    
+    num_infected_agent = random.randint(1, min(3, num_agents)) # Nombre aléatoire d'agent infecté au départ
+    
     graph = Graph(num_agents, num_communities, min_degree) # Graph principal
+    
     # Création du graph selon le nombre de communauté
     graph.create_communities()
     
@@ -55,7 +56,7 @@ def run_simulation(num_communities,num_agents):
             if agent.status == "healthy":
                 neighbors = list(graph.G.neighbors(agent.id))
                 # Nombre de recontres par l'agent
-                encounters = random.randint(1, len(neighbors)//3)
+                encounters = random.randint(1, len(neighbors))
                 # Voisins rencontré par l'agent
                 neighbors_to_meet = random.sample(neighbors, encounters)
                 # Infection si on rencontre un infecté
