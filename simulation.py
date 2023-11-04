@@ -14,15 +14,15 @@ from network import Graph
 import matplotlib.animation as animation
 
 # Variables
-num_agents = 400 # Nombre de sommets (#V)
+##num_agents = 400 # Nombre de sommets (#V)
 num_infected_agent = random.randint(1, 3) # Nombre aléatoire d'agent infecté au départ
-num_communities = 5 # Nombre de communautés ( >= 1)
+##num_communities = 5 # Nombre de communautés ( >= 1)
 min_degree = 4 # Degré minimum des noeuds ( > 1)
 frames = 20 # Nombre de frames pour l'animation (idéal : [10, 20])
-graph = Graph(num_agents, num_communities, min_degree) # Graph principal
 
 # Fonction principale de la simulation
-def run_simulation():
+def run_simulation(num_communities,num_agents):
+    graph = Graph(num_agents, num_communities, min_degree) # Graph principal
     # Création du graph selon le nombre de communauté
     graph.create_communities()
     
@@ -72,10 +72,10 @@ def run_simulation():
         snapshots.append(snapshot)
 
     # Animation du graph avec les instantanés
-    animate_graph(snapshots)
+    animate_graph(snapshots,graph)
 
 # Fonction d'animation du graph utilisant la bibliothèque matplotlib.animation
-def animate_graph(snapshots):
+def animate_graph(snapshots,graph):
     fig, ax = plt.subplots()
     position = nx.spring_layout(graph.G)
     node_colors = [graph.state_colors.get(status, "#01FE01") for status in snapshots[0]]

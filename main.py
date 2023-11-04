@@ -12,21 +12,19 @@ from simulation import run_simulation
 from agent import Agent
 
 def main():
-    run_simulation()
+    # Demande à l'utilisateur combien d'agents et de communautés il souhaite créer
+    num_agents = int(input("Combien d'agents (sommets) voulez-vous créer ? "))
+    num_communities = int(input("Combien de communautés souhaitez-vous créer ? "))
+
+    # Vérifie si les valeurs entrées sont dans les limites acceptables
+    if num_agents > 700 or num_communities > 10:
+        print("C'est trop grand ! Veuillez entrer une valeur plus petite.")
+    else:
+        print(f"Vous avez choisi {num_agents} agent. et {num_communities} communautés.")
+        
+    run_simulation(num_communities,num_agents)
 
 if __name__ == "__main__":
-
-# Demande à l'utilisateur combien d'agents et de communautés il souhaite créer
-agent = Agent()
-communities = create_communities()
-agent = int(input("Combien d'agents (sommets) voulez-vous créer ? "))
-communities = int(input("Combien de communautés souhaitez-vous créer ? "))
-
-# Vérifie si les valeurs entrées sont dans les limites acceptables
-if agent > 700 or communities > 10:
-    print("C'est trop grand ! Veuillez entrer une valeur plus petite.")
-else:
-    print(f"Vous avez choisi {agent} agent. et {communities} communautés.")
-    # Vous pouvez ajouter le code pour travailler avec ces valeurs ici.
-main()
+        
+    main()
    
