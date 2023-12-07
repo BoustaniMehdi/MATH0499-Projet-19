@@ -1,3 +1,11 @@
+"""
+Ce fichier contient la définition de la classe Graph.
+
+Auteurs: Boustani Mehdi - Tingue Lucynda
+Date: 7 décembre 2023
+Projet: 19
+"""
+
 import networkx as nx
 import random
 import matplotlib.pyplot as plt

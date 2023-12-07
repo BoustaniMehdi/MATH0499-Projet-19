@@ -2,7 +2,7 @@
 Ce fichier contient le code gérant la logique de simulation.
 
 Auteurs: Boustani Mehdi - Tingue Lucynda
-Date: 7 octobre 2023
+Date: 7 décembre 2023
 Projet: 19
 """
 
@@ -14,7 +14,7 @@ from network import Graph
 import matplotlib.animation as animation
 
 # Variables
-min_degree = 4 # Degré minimum des noeuds ( > 1)
+min_degree = 3 # Degré minimum des noeuds ( > 1)
 frames = 20 # Nombre de frames pour l'animation (idéal : [10, 20])
 
 # Fonction principale de la simulation
@@ -88,5 +88,5 @@ def animate_graph(snapshots,graph):
         ax.clear() # On évite les surimpression du graph
         nx.draw(graph.G, position, with_labels=False, node_color=node_colors, node_size=10)
         
-    ani = animation.FuncAnimation(fig, update, frames=frames, interval=200, repeat=False)
+    ani = animation.FuncAnimation(fig, update, frames=frames, interval=150, repeat=False)
     plt.show()

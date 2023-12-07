@@ -2,7 +2,7 @@
 Ce fichier contient la fonction principale du projet de simulation de propagation de maladie.
 
 Auteurs: Boustani Mehdi - Tingue Lucynda
-Date: 7 octobre 2023
+Date: 7 décembre 2023
 Projet: 19
 """
 

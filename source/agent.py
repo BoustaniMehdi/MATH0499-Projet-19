@@ -2,7 +2,7 @@
 Ce fichier contient la définition de la classe Agent.
 
 Auteurs: Boustani Mehdi - Tingue Lucynda
-Date: 7 octobre 2023
+Date: 7 décembre 2023
 Projet: 19
 """
 
@@ -18,7 +18,7 @@ class Agent:
             self.days_infected = 0
             
     def heal(self):
-        if self.status == "infected" and self.days_infected >= 5:   
+        if self.status == "infected" and self.days_infected >= 7: #7 jours pour récupérer (1 semaine)
             self.status = "cured"
             self.days_infected = 0
     
